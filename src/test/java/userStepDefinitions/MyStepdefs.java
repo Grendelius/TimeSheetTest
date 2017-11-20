@@ -9,13 +9,13 @@ import org.openqa.selenium.By;
 import pageObjects.TimeSheetTable;
 
 import static com.codeborne.selenide.Condition.enabled;
+import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class MyStepdefs {
 
     @Given("^Идем на веб-сайт проекта компании project.bellintegrator.ru$")
     public void openTimeSheet() {
-//        System.setProperty("webdriver.chromedriver", "test/resources/chromedriver.exe");
         Browser.chromeSetUp();
         open("https://project.bellintegrator.ru/PWA/default.aspx");
     }
@@ -48,8 +48,14 @@ public class MyStepdefs {
         (new TimeSheetTable()).clickSaveBtn();
     }
 
-    @Then("^отправляем заполненный TimeSheet$")
+    @And("^отправляем заполненный TimeSheet$")
     public void sendTimeSheet() {
         (new TimeSheetTable()).clickSubmitBtnAndSendTimeSheet();
     }
+
+    @Then("^проверяем статус последней рабочей недели$")
+    public void submittedCheck() {
+        $x("//*[@id='GridDataRow']/td[4]/a").shouldBe(exactText("Submitted"));
+    }
+
 }

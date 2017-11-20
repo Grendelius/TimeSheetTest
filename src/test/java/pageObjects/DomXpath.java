@@ -5,9 +5,7 @@ public enum DomXpath {
     SAVE_BTN("//*[@id='Ribbon.ContextualTabs.TiedMode.Home.Sheet.Save-Large']"),
     SEND_BTN("//*[@id='Ribbon.ContextualTabs.TiedMode.Home.Sheet.SubmitMenu-Large']"),
     SUBMIT_MENU("//*[@id='Ribbon.ContextualTabs.TiedMode.Home.Sheet.SubmitMenu.Menu']"),
-    TURN_IN_FINAL(".//*[@id='Ribbon.ContextualTabs.TiedMode.Home.Sheet.SubmitTimesheet-Menu32']"),
-    COM_IFRAME_PARENT("/html/body/iframe"),
-    COM_IFRAME_CHILD("//iframe[@id='DlgFrame866fe750-31be-4e10-a1b8-14bb2aa3ec37']");
+    TURN_IN_FINAL(".//*[@id='Ribbon.ContextualTabs.TiedMode.Home.Sheet.SubmitTimesheet-Menu32']");
 
     private String dom;
 
