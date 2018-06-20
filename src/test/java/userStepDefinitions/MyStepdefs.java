@@ -45,12 +45,12 @@ public class MyStepdefs {
 
     @And("^нажимаем на кнопку \"Save\"$")
     public void saveTimeSheet() {
-        (new TimeSheetTable()).clickSaveBtn();
+        new TimeSheetTable().clickSaveBtn();
     }
 
     @And("^отправляем заполненный TimeSheet$")
     public void sendTimeSheet() {
-        (new TimeSheetTable()).clickSubmitBtnAndSendTimeSheet();
+        new TimeSheetTable().clickSubmitBtnAndSendTimeSheet();
     }
 
     @Then("^проверяем статус последней рабочей недели$")
